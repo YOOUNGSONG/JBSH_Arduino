@@ -1,4 +1,5 @@
-int LigntIntensity;
+int LightIntensity;
+
 void setup() {
   pinMode(2, INPUT);
   pinMode(3, INPUT);
@@ -6,19 +7,19 @@ void setup() {
 
 void loop() {
   if(digitalRead(2) == HIGH){
-    LigntIntensity = LigntIntensity + 10;
-    if(LigntIntensity > 255){
-      LigntIntensity = 255;
+    LightIntensity = LightIntensity + 10;
+    if(LightIntensity > 255){
+      LightIntensity = 255;
     }
   }
   if(digitalRead(3) == HIGH){
-    LigntIntensity = LigntIntensity - 10;
-    if(LigntIntensity < 0){
-      LigntIntensity = 0;
+    LightIntensity = LightIntensity - 10;
+    if(LightIntensity < 0){
+      LightIntensity = 0;
     }
   }
   for(int i=9; i<12; i++){
-    analogWrite(i, LigntIntensity);
+    analogWrite(i, LightIntensity);
     delay(10);
   }
 }
